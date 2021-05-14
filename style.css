@@ -1,0 +1,708 @@
+:root {
+    --color-red: #BB576A;
+    --color-grey: #EDEDED;
+    --color-yellow: #FFC32D;
+    --color-green: #00B89E;
+    --color-dark:rgba(75, 29, 71, 1);
+    --font-family: "Ubuntu", sans-serif
+}
+
+@font-face {
+    font-family: SF-N; /* Гарнитура шрифта */
+    src: url(fonts/9652.ttf); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: Ubuntu; /* Гарнитура шрифта */
+    src: url(fonts/Ubuntu-B.ttf); /* Путь к файлу со шрифтом */
+}
+
+header {
+    padding : 1rem 2rem;
+    background-color: var(--color-red);
+    box-shadow: 0px 10px 10px rgba(165, 165, 165, 0.5);
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+
+}
+
+header div {
+    display: flex;
+    align-items: baseline;
+}
+
+header .div-user{
+    align-items: center;
+}
+
+.user {
+    color: #000000;
+    mix-blend-mode: soft-light;
+    opacity: 0.5;
+}
+
+.user-box{
+    background: url(img/icons8-user-male-52.png);
+    background-blend-mode: overlay;
+    mix-blend-mode: soft-light;
+    opacity: 0.5;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.div-user .iconify{
+    width: 2rem;
+    height: 2rem;
+    background-blend-mode: overlay;
+    mix-blend-mode: soft-light;
+    opacity: 0.5;
+}
+
+body{
+    background-color: var(--color-grey);
+}
+h1, h2, h3{
+    font-family: var(--font-family);
+    margin: 0;
+}
+
+header h1{
+    font-size: 2.5rem;
+    padding: 0 2rem;
+    margin : 0;
+    color: #ffffff;
+    display:inline-block
+}
+
+header h2{
+    font-size: 1.75rem;
+    padding: 0 2rem;
+    color: #ffffff;
+    display:inline-block;
+}
+
+footer {
+    height: 5%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h6 {
+    font-size: 1rem;
+    font-family: SF-N;
+    text-align: center;
+    margin: 0;
+    font-style: normal;
+    line-height: 21px;
+}
+
+.question-card-box{
+    height: 88%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#scroll {
+    max-height: 88vh;
+    overflow-y: auto;
+}
+
+.question-card{
+    align-self: center;
+    max-width: 1700px;
+    width: 100%;
+    position: relative;
+}
+
+@media(max-width: 1800px){
+    .question-card{
+        margin: 0 10rem;
+    }
+}
+
+@media(max-width: 992px){
+    .question-card{
+        margin: 0 5rem;
+    }
+}
+
+@media(max-width: 768px){
+    .question-card{
+        margin: 0 1rem;
+    }
+}
+
+.question-card .question{
+    background: var(--color-yellow);
+    border-radius: 50px 50px 0px 0px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+    padding: 4rem;
+}
+
+.question h2{
+    font-size: 2rem;
+}
+
+.question-card .answers-4{
+    background: white;
+    border-radius: 0px 0px 50px 50px;
+    display: flex;
+    height: 30%;
+    padding: 3rem;
+    justify-content: space-between;
+    align-content: space-between;
+    /* width: 100%; */
+    flex-direction: column;
+}
+
+
+.answers-4 div{
+    display: flex;
+}
+
+
+
+.answers-4 .form-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form-box-row .question-card .question{
+    height: 10rem;
+}
+
+#question-4{
+    height: 3rem;
+}
+
+.question-card .answer-open{
+    background: white;
+    border-radius: 0px 0px 50px 50px;
+    display: flex;
+    align-items: center;
+    height: 40%;
+    padding: 2rem 3rem;
+}
+
+.answer-open form{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+button {
+    border: none;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 72px;
+    font-style: normal;
+    line-height: 50%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.buttons-yellow {
+    background-color: var(--color-yellow)
+}
+
+.buttons-red{
+    background-color: var(--color-red)
+}
+
+.input-box{
+    background-color: var(--color-red);
+    width: 10rem;
+    border-radius: 5rem;
+    /* align-content: center; */
+    justify-content: center;
+}
+
+.publish-button{
+    background-color: var(--color-green);
+    width: 20rem;
+    border-radius: 5rem;
+    /* align-content: center; */
+    justify-content: center;
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem;
+    align-content: center;
+    display: flex;
+}
+
+
+.button-box-publish{
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    height: 15%;
+}
+
+.delete-button{
+    background-image: url("img/icons8-wastebasket-96.png") ;
+    height: 5rem;
+    width: 5rem;
+    display: flex;
+    background-size: cover;
+}
+
+.buttons-column{
+    width: 40%;
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 700px;
+    margin-top: 2rem;
+}
+
+
+.buttons-column .buttons-inline{
+    display: flex;
+    align-content: space-between;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.form-box label{
+    font-size: 1.25rem;
+    display: flex;
+    margin: 5% 0;
+    font-family: var(--font-family);
+}
+
+.form-box-column{
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.form-box-column .form-box-row{
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    /* flex-direction: column; */
+    width: 100%;
+    height: 85%;
+    align-items: center;
+}
+
+
+.form-box .button-box{
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-direction: column
+}
+
+.form-box div{
+    flex-direction: column;
+}
+.custom-radio {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    display: inline-flex;
+}
+/* для элемента label связанного с .custom-radio */
+.custom-radio+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+/* создание в label псевдоэлемента  before со следующими стилями */
+.custom-radio+label::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #FDFDFD;
+    background: #FDFDFD;
+    border-radius: 50%;
+    margin-right: 3em;
+    box-shadow: -2px -2px 4px rgba(225, 225, 225, 0.25), 2px 2px 4px rgba(109, 109, 109, 0.25);
+}
+/* стили при наведении курсора на радио */
+.custom-radio:not(:disabled):not(:checked)+label:hover::before {
+    border-color: var(--color-dark);
+}
+/* стили для активной радиокнопки (при нажатии на неё) */
+.custom-radio:not(:disabled):active+label::before {
+    background-color: var(--color-dark);
+}
+
+/* стили для радиокнопки, находящейся в состоянии checked */
+.custom-radio:checked+label::before {
+    border-color: var(--color-dark);
+    background-color: var(--color-dark);
+}
+/* стили для радиокнопки, находящейся в состоянии disabled */
+.custom-radio:disabled+label::before {
+    background-color: #e9ecef;
+}
+
+/* для элемента label связанного с .custom-radio */
+.custom-radio+input {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+/* создание в label псевдоэлемента  before со следующими стилями */
+.custom-radio+input::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #FDFDFD;
+    background: #FDFDFD;
+    border-radius: 50%;
+    margin-right: 3em;
+    box-shadow: -2px -2px 4px rgba(225, 225, 225, 0.25), 2px 2px 4px rgba(109, 109, 109, 0.25);
+}
+/* стили при наведении курсора на радио */
+.custom-radio:not(:disabled):not(:checked)+input:hover::before {
+    border-color: var(--color-dark);
+}
+/* стили для активной радиокнопки (при нажатии на неё) */
+.custom-radio:not(:disabled):active+input::before {
+    background-color: var(--color-dark);
+}
+
+/* стили для радиокнопки, находящейся в состоянии checked */
+.custom-radio:checked+input::before {
+    border-color: var(--color-dark);
+    background-color: var(--color-dark);
+}
+/* стили для радиокнопки, находящейся в состоянии disabled */
+.custom-radio:disabled+input::before {
+    background-color: #e9ecef;
+}
+
+.custom-input{
+    border: none;
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 55px;
+    display: flex;
+    align-items: center;
+    background: none;
+    width: 80%;
+}
+
+.custom-input::placeholder{
+    opacity: 0.1;
+    color: black;
+}
+
+.custom-input:focus{
+    outline: none;
+}
+
+.game-image{
+    height: 250px;
+    width: 344px;
+    /* background-size: cover; */
+    object-fit: cover;
+    border-radius: 40px 40px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-games{
+    flex-direction: column;
+    background: var(--color-red);
+    border-radius: 0px 0px 50px 50px;
+    display: flex;
+    align-items: center;
+    height: 136px;
+    justify-content: space-around;
+}
+
+.info-text{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-games h3 {
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 46px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.author{
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+}
+
+.count-questions{
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+}
+.game-card {
+    padding: 25px;
+}
+
+.games-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+@media(max-width: 2000px){
+    .games-grid{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media(max-width: 1700px){
+    .games-grid{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+    .games-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+.game-card{
+
+}
+
+
+html, body {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-mob{
+    display: none;
+    font-size: 30px;
+    color: #fff;
+}
+
+.buttons-column-mobile{
+    display: none;
+}
+
+
+
+@media(max-width: 860px){
+    .buttons-column {
+        height: 600px;
+    }
+
+    header h2 {
+        font-size: 1.4rem;
+        padding: 0 1.5rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+}
+
+
+@media(max-width: 760px){
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 640px){
+    header h2 {
+        display: none;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .question h2 {
+        font-size: 1rem;
+    }
+
+    .menu-mob{
+        display: block;
+    }
+
+    header div {
+        align-items: center;
+    }
+
+    .question-card .question {
+        padding: 1.5rem;
+    }
+
+    .custom-input {
+        font-size: 1rem;
+    }
+
+    button {
+        height: 2.5rem;
+        width: 2.5rem;
+        font-size: 2rem;
+    }
+
+    .answer-open form {
+        align-items: center;
+    }
+
+    .question-card .answer-open {
+        padding: 1rem 2rem;
+    }
+
+    .form-box label {
+        font-size: 1rem;
+    }
+
+    .custom-radio+label::before {
+        margin-right: 1rem;
+    }
+
+    .form-box-column .form-box-row {
+        flex-direction: column;
+    }
+
+    .custom-input{
+        max-height: 100%;
+    }
+
+    .question-card .answers-4 {
+        height: auto;
+        padding: 2rem;
+    }
+
+    .question-card {
+        width: auto;
+        margin: 1rem;
+    }
+
+    .custom-input {
+        line-height: 40px;
+    }
+
+    .buttons-column {
+        padding-top: 1rem;
+    }
+
+    .buttons-column-mobile{
+        max-width: 440px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .buttons-column{
+        display: none;
+    }
+
+    .buttons-column-mobile div{
+        display: flex;
+
+        padding: 0 1rem;
+    }
+
+    .buttons-column-mobile div:nth-child(1){
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .buttons-column-mobile div:nth-child(2){
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .buttons-column-mobile div:nth-child(2) button{
+        margin: 0.5rem;
+    }
+
+    .buttons-inline button{
+        margin-right: 1rem;
+    }
+
+    .buttons-column-mobile .input-box{
+        width: 8rem;
+        font-size: 2rem;
+        height: 2.5rem;
+    }
+
+    .del{
+        display: none;
+    }
+
+    footer{
+        display: none;
+    }
+
+    .publish-button {
+        margin-top:1rem;
+        width: 13rem;
+        font-size: 1.7rem;
+    }
+
+    .form-box-row{
+        height: 100%;
+    }
+
+    .form-box-column .form-box-row {
+        justify-content: center;
+    }
+
+    .question-card .answer-open {
+        height: auto;
+    }
+}
