@@ -3,6 +3,8 @@ import gamesPage from './pages/games.js';
 import createGamePage from "./pages/createGame.js";
 import addQuestionsPage from "./pages/addQuestions.js";
 import playGamePage from "./pages/playGame.js";
+import loginPage from "./pages/login.js";
+import registerPage from "./pages/register.js"
 
 export default {
     async gamesRoute(params){
@@ -32,6 +34,12 @@ export default {
     },
     async playGameRoute(params){
         playGamePage.render(params.id);
+    },
+    async loginRoute(params){
+        loginPage.render();
+    },
+    async registerRoute(params){
+        registerPage.render();
     }
 
 }

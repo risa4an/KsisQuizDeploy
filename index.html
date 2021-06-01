@@ -13,8 +13,11 @@
         <h1>KsisQuiz</h1><a href="/#games"><h2>Play</h2></a><a href="/#createGame"><h2>Add</h2></a>
     </div>
     <div class="div-user">
-        <h2 class="user">kisarisa4an</h2>
-        <span class="iconify" data-icon="topcoat:user" data-inline="false"></span>
+        <a href="/#login"><h2 class="user" id="usernameHeader">Login</h2></a>
+        <a href="/#register">
+            <span id="userIconAdd" class="iconify" data-icon="majesticons:user-add" data-inline="false"></span>
+            <span id="userIcon" style="visibility: hidden;" class="iconify" data-icon="majesticons:user" data-inline="false"></span>
+        </a>
     </div>
 </header>
 <div class="question-card-box" id="main">
@@ -190,7 +193,35 @@
             </form>
         </div>
     </div>
-
+</script>
+<script type="text/template" id="loginTemplate">
+    <form class="formLogin" id="loginForm">
+        <div class="question-card" style="width: unset;">
+            <div class="divLoginTop">
+                <input class="custom-input" placeholder="Email" id="email" name="email">
+            </div>
+            <div class="divLoginBottom">
+                <input class="custom-input" type="password" placeholder="Password" id="password" name="password">
+            </div>
+        </div>
+        <button class="publish-button" type="submit">Log in</button>
+    </form>
+</script>
+<script type="text/template" id="registerTemplate">
+    <form class="formLogin" id="registerForm" style="height: 70%">
+        <div class="question-card" style="width: unset;">
+            <div class="divLoginTop">
+                <input class="custom-input" placeholder="Username" id="username" name="login">
+            </div>
+            <div class="divLoginCenter">
+                <input class="custom-input" placeholder="Email" id="email" name="email">
+            </div>
+            <div class="divLoginBottom">
+                <input class="custom-input" type="password" placeholder="Password" id="password" name="password">
+            </div>
+        </div>
+        <button class="publish-button" type="submit">Register</button>
+    </form>
 </script>
 <script type="text/template" id="resultTemplate">
     <div class="question-card">
