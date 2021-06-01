@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<script type="text/template" id="gamesTemplate">
+    <div class="games-grid">
+        {{#each list}}
+        <div class="game-card">
+            <img  class="game-image" src="img/download20210403221014.png">
+            <div class="info-games">
+                <div class="info-text"><h3>{{ game_name }}</h3>
+                    <span class="author">Created by {{ game_creator }}</span></div>
+                <span class="count-questions">{{ num_of_questions}} questions</span>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</script>
+</body>
+</html>
+
+

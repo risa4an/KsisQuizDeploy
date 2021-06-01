@@ -10,70 +10,218 @@
 <body>
 <header>
     <div>
-        <h1>KsisQuiz</h1><h2>Play</h2><h2>Add</h2>
+        <h1>KsisQuiz</h1><a href="/KsisQuizJs/#games"><h2>Play</h2></a><a href="/KsisQuizJs/#createGame"><h2>Add</h2></a>
     </div>
     <div class="div-user">
         <h2 class="user">kisarisa4an</h2>
         <span class="iconify" data-icon="topcoat:user" data-inline="false"></span>
     </div>
 </header>
-<div class="question-card-box" id="scroll">
-    <div class="games-grid">
-        <div class="game-card">
-            <img  class="game-image" src="img/download20210403221014.png">
-            <div class="info-games">
-                <div class="info-text"><h3>fsimgsrpogm</h3>
-                    <span class="author">Created by John Dunkan</span></div>
-                <span class="count-questions">30 questions</span>
-            </div>
-        </div>
-        <div class="game-card">
-            <img  class="game-image" src="img/download20210403221014.png">
-            <div class="info-games">
-                <div class="info-text"><h3>fsimgsrpogm</h3>
-                    <span class="author">Created by John Dunkan</span></div>
-                <span class="count-questions">30 questions</span>
-            </div>
-        </div>
-        <div class="game-card">
-            <img  class="game-image" src="img/download20210403221014.png">
-            <div class="info-games">
-                <div class="info-text"><h3>fsimgsrpogm</h3>
-                    <span class="author">Created by John Dunkan</span></div>
-                <span class="count-questions">30 questions</span>
-            </div>
-        </div>
-        <div class="game-card">
-            <img  class="game-image" src="img/download20210403221014.png">
-            <div class="info-games">
-                <div class="info-text"><h3>fsimgsrpogm</h3>
-                    <span class="author">Created by John Dunkan</span></div>
-                <span class="count-questions">30 questions</span>
-            </div>
-        </div>
-        <div class="game-card">
-            <img  class="game-image" src="img/download20210403221014.png">
-            <div class="info-games">
-                <div class="info-text"><h3>fsimgsrpogm</h3>
-                    <span class="author">Created by John Dunkan</span></div>
-                <span class="count-questions">30 questions</span>
-            </div>
-        </div>
-        <div class="game-card">
-            <img  class="game-image" src="img/download20210403221014.png">
-            <div class="info-games">
-                <div class="info-text"><h3>fsimgsrpogm</h3>
-                    <span class="author">Created by John Dunkan</span></div>
-                <span class="count-questions">30 questions</span>
-            </div>
-        </div>
-    </div>
-
+<div class="question-card-box" id="main">
 
 </div>
 <footer>
     <h6>Copyright © 2021 Katerina Risunova. All rights reserved.</h6>
 </footer>
+<script type="module" src="index.js"></script>
+<script type="module" src="./pages/addQuestions.js"></script>
+<script src="https://twitter.github.io/typeahead.js/js/handlebars.js"></script>
+<script type="text/template" id="gamesTemplate">
+    <div class="games-grid">
+        {{#each list}}
+            <div class="game-card" onclick="window.location.href = window.location.href.split('/').slice(0, -1).join('/') + '#playGame/{{gameId}}'">
+                <img  class="game-image" src="img/download20210403221014.png">
+                <div class="info-games">
+                    <div class="info-text"><h3>{{ gameName }}</h3>
+                        <span class="author">Created by {{ gameCreator }}</span></div>
+                    <span class="count-questions">{{ numOfQuestions}} questions</span>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</script>
+
+<script type="text/template" id="addQuestion1Template">
+    <div class="question">
+        <textarea id="question" cols="40" rows="5" placeholder="Write your question" class="custom-input" name="question"></textarea>
+    </div>
+    <div class="answer-open">
+        <input class="custom-input" placeholder="| Write your answer here" id="answer1" name="answer1">
+    </div>
+</script>
+
+<script type="text/template" id="addQuestion4Template">
+    <div class="question">
+        <textarea id="question" name="question" cols="40" rows="3" placeholder="Write your question" class="custom-input"></textarea>
+    </div>
+    <div class="answers-4">
+        <div>
+            <input type="radio"  class="custom-radio" id="radio1" name="radio1" value="1">
+            <label for="radio1"></label>
+            <input class="custom-input" placeholder="|Write your answer here" id="answer1" name="answer1">
+        </div>
+        <div>
+            <input type="radio"  class="custom-radio" id="radio2" name="radio1" value="2">
+            <label for="radio2"></label>
+            <input class="custom-input" placeholder="|Write your answer here" id="answer2" name="answer2">
+        </div>
+        <div>
+            <input type="radio"  class="custom-radio" id="radio3" name="radio1" value="3">
+            <label for="radio3"></label>
+            <input class="custom-input" placeholder="|Write your answer here" id="answer3" name="answer3">
+        </div>
+        <div>
+            <input type="radio"  class="custom-radio" id="radio4" name="radio1" value="4">
+            <label for="radio4"></label>
+            <input class="custom-input" placeholder="|Write your answer here" id="answer4" name="answer4">
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="addQuestionTemplate">
+    <form class="form-box-column" id="createQuestion">
+        <div class="form-box-row">
+            <div class="question-card" id="question-box">
+
+            </div>
+            <div class="buttons-column">
+                <div class="buttons-inline">
+                    <button type="button" class="buttons-red" id="questionSwitch1"><span class="iconify" data-icon="mdi:numeric-1"
+                                                                        data-inline="false"></span></button>
+                    <button type="button" class="buttons-red" style="opacity: 40%" id="questionSwitch4">
+                        <span class="iconify" data-icon="mdi:numeric-4" data-inline="false"></span></button>
+                </div>
+                <button type="button" class="buttons-yellow" id="questionFoward"><span class="iconify"
+                                                                       data-icon="eva:arrow-right-outline"
+                                                                       data-inline="false"></span></button>
+                <button type="button" class="buttons-yellow" id="addQuestion"><span class="iconify" data-icon="entypo:plus"
+                                                                       data-inline="false"></span></button>
+                <button type="button" class="buttons-yellow" id="questionBack"><span class="iconify"
+                                                                       data-icon="eva:arrow-left-outline"
+                                                                       data-inline="false"></span></button>
+                <button type="button" class="input-box" id="questionTime" style="font-size: 2.75rem">90</button>
+                <div class="del">
+                    <button type="button" class="delete-button" id="deleteQuestion"></button>
+                </div>
+            </div>
+            <div class="b buttons-column-mobile">
+                <div>
+                    <div class="buttons-inline">
+                        <button type="button" class="buttons-red"><span class="iconify"
+                                                                            data-icon="mdi:numeric-1"
+                                                                            data-inline="false"></span></button>
+                        <button type="button" class="buttons-red"><span class="iconify"
+                                                                            data-icon="mdi:numeric-4"
+                                                                            data-inline="false"></span></button>
+                    </div>
+                    <button type="button" class="input-box" id="questionTimeM" style="font-size: 2.75rem"><span class="iconify"
+                                                                      data-icon="eva:arrow-right-outline"
+                                                                      data-inline="false"></span></button>
+                </div>
+                <div>
+                    <button type="button" class="buttons-yellow" id="questionBackM"><span class="iconify"
+                                                                           data-icon="eva:arrow-left-outline"
+                                                                           data-inline="false"></span></button>
+                    <button type="button" class="buttons-yellow" id="addQuestionM"><span class="iconify" data-icon="entypo:plus"
+                                                                           data-inline="false"></span></button>
+                    <button type="button" class="buttons-yellow" id="questionFowardM"><span class="iconify"
+                                                                           data-icon="eva:arrow-right-outline"
+                                                                           data-inline="false"></span></button>
+                </div>
+            </div>
+
+        </div>
+        <div class="button-box-publish">
+            <button type="submit" class="publish-button" id="publishButton">Publish</button>
+        </div>
+    </form>
+</script>
+<script type="text/template" id="createGameTemplate">
+    <form onsubmit="window.location.href=window.location.href+'/new'" class="form-box" id="createGame">
+        <div class="game-card">
+            <div class="game-image">
+                <input type="file" name="gameImage">
+            </div>
+            <div class="info-games">
+                <input class="custom-input" name="gameName" placeholder="_game_name_"/>
+            </div>
+    </form>
+</script>
+<script type="text/template" id="question4Template">
+    <div class="question-card">
+        <div class="question" style="padding: 2.5rem;">
+            <h2>{{question}}</h2>
+        </div>
+        <div class="answers-4">
+            <form class="form-box" id="answerForm" action="">
+                <div>
+                    <input type="radio" class="custom-radio" id="answer1" name="answer" value="1">
+                    <label for="answer1">{{answers.[0]}}</label><Br>
+                    <input type="radio" class="custom-radio" id="answer2" name="answer" value="2">
+                    <label for="answer2">{{answers.[1]}}</label><Br>
+                    <input type="radio" class="custom-radio" id="answer3" name="answer" value="3">
+                    <label for="answer3">{{answers.[2]}}</label><Br>
+                    <input type="radio" class="custom-radio" id="answer4" name="answer" value="4">
+                    <label for="answer4">{{answers.[3]}}</label><Br>
+                </div>
+                <div class="button-box">
+                    <div></div>
+                    <button type="button" id="buttonNextQuestion" class="buttons-yellow"><span class="iconify" data-icon="eva:arrow-right-outline" data-inline="false"></span></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</script>
+<script type="text/template" id="question1Template">
+    <div class="question-card">
+        <div class="question" style="padding: 3rem;">
+            <h2>{{question}}</h2>
+        </div>
+
+        <div class="answer-open">
+            <form class="form-box" id="answerForm" action="">
+                <div>
+                    <input class="custom-input" placeholder="| Write your answer here" id="answer1" name="answer">
+                </div>
+                <div class="button-box">
+                    <button type="button" id="buttonNextQuestion" class="buttons-yellow"><span class="iconify" data-icon="eva:arrow-right-outline" data-inline="false"></span></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</script>
+<script type="text/template" id="resultTemplate">
+    <div class="question-card">
+        <div style="display: flex;align-content: center;justify-content: center;">
+            <h1 style="font-size: 4em;">{{result}} / {{overall}}</h1>
+        </div>
+    </div>
+</script>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyDuKdQrO-5h8NYT-T_FicpmYbSzMp-G-og",
+        authDomain: "ksisquiz.firebaseapp.com",
+        projectId: "ksisquiz",
+        storageBucket: "ksisquiz.appspot.com",
+        messagingSenderId: "585072627834",
+        appId: "1:585072627834:web:4ca38040f4f15a3eb9ebc3"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+</script>
 
 </body>
 </html>
