@@ -3,7 +3,7 @@ import Model from "../Model.js";
 
 const resultsNode = document.getElementById('main');
 let playQuestions;
-const answers = [];
+let answers = [];
 
 export default {
     async render(gameId){
@@ -51,5 +51,6 @@ function getResults(){
             result += 1;
         }
     }
+    answers = [];
     return result;
 }
