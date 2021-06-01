@@ -3,11 +3,12 @@ import Model from "../Model.js";
 
 const resultsNode = document.getElementById('main');
 let playQuestions;
-let answers = [];
+let answers;
 
 export default {
     async render(gameId){
         playQuestions = await Model.getQuestions(gameId);
+        answers = [];
         await playGame(0);
     },
     async renderQuestion(question){
