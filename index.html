@@ -30,7 +30,7 @@
     <div class="games-grid">
         {{#each list}}
             <div class="game-card" onclick="window.location.href = window.location.href.split('/').slice(0, -1).join('/') + '#playGame/{{gameId}}'">
-                <img  class="game-image" src="img/download20210403221014.png">
+                <img  class="game-image" src="{{ gameImage }}">
                 <div class="info-games">
                     <div class="info-text"><h3>{{ gameName }}</h3>
                         <span class="author">Created by {{ gameCreator }}</span></div>
@@ -152,6 +152,7 @@
         <div class="question" style="padding: 2.5rem;">
             <h2>{{question}}</h2>
         </div>
+        <div class="timeLine" id="timeLine"></div>
         <div class="answers-4">
             <form class="form-box" id="answerForm" action="">
                 <div>
@@ -177,7 +178,7 @@
         <div class="question" style="padding: 3rem;">
             <h2>{{question}}</h2>
         </div>
-
+        <div class="timeLine" id="timeLine"></div>
         <div class="answer-open">
             <form class="form-box" id="answerForm" action="">
                 <div>
@@ -193,7 +194,7 @@
 </script>
 <script type="text/template" id="resultTemplate">
     <div class="question-card">
-        <div style="display: flex;align-content: center;justify-content: center;">
+        <div style="display: flex;align-content: center;justify-content: center; background-color: var(--color-grey)">
             <h1 style="font-size: 4em;">{{result}} / {{overall}}</h1>
         </div>
     </div>
@@ -208,6 +209,9 @@
 <!-- Add Firebase products that you want to use -->
 <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css" />
 
 <script>
     // Your web app's Firebase configuration

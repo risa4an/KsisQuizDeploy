@@ -116,6 +116,14 @@ h6 {
     max-width: 1700px;
     width: 100%;
     position: relative;
+    background-color: white;
+    border-radius: 50px;
+}
+
+.timeLine{
+    height: 10px;
+    width: 50%;
+    background-color: var(--color-red);
 }
 
 @media(max-width: 1800px){

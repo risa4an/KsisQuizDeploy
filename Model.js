@@ -1,4 +1,5 @@
 const db = firebase.firestore();
+const stImg = firebase.storage().ref().child('images');
 
 export default {
     async getGames(){
@@ -24,8 +25,12 @@ export default {
         const id = date.getFullYear().toString() +
             date.getMonth().toString() + date.getDate().toString() +
             date.getHours().toString() + date.getMinutes().toString();
+        let imgUrl = id + '.' + data.imageName.split('.').slice(-1);
+        let imgRef = stImg.child(imgUrl);
+        let taskUpload = await imgRef.put(data.gameImage).then();
+        let uploadUrl = await imgRef.getDownloadURL();
         const game = {
-            gameImage: data.gameImage,
+            gameImage: uploadUrl,
             gameName: data.gameName,
             gameCreator: "Kate",
             numOfQuestions: 0,

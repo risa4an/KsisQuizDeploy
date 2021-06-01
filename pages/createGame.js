@@ -18,7 +18,11 @@ export default {
     },
     getData(){
         const form = document.getElementById("createGame");
-        return {gameName: form.elements.gameName.value , gameImage: form.elements.gameImage.value};
+        return {
+            gameName: form.elements.gameName.value ,
+            gameImage: form.elements.gameImage.files[0],
+            imageName: form.elements.gameImage.value
+        };
     }
 
 }

@@ -39,6 +39,14 @@ function playGame(temp){
                 clearTimeout(timerId);
                 timerId = setTimeout(q, 0, i+1);
             }
+
+            let timeLine = document.getElementById("timeLine");
+            let step = 100 / 200 / questions[i].time;
+            let width = 0;
+            let timerForLine = setInterval(function () {
+                timeLine.style.width = width + '%';
+                width += step;
+            }, 5)
             timerId = setTimeout(q, questions[i].time * 1000, i + 1);
         }
 
